@@ -1,3 +1,6 @@
+let humanScore = 0;
+let computerScore = 0;
+
 function getComputerChoice(num) {
     if (num ===1) {
         return "rock";
@@ -7,6 +10,22 @@ function getComputerChoice(num) {
         return "scissors";
     }
 }
-console.log(getComputerChoice(0));
-console.log(getComputerChoice(1));
-console.log(getComputerChoice(0.5));
+
+let sign = prompt("Choose rock, paper or scissors:");
+
+function getHumanChoice(input) {
+    if (input === rock) {
+        return "rock";
+    } else if (input === paper) {
+        return "paper";     
+    } else if (input === scissors) {
+        return "scissors";
+    }
+}
+
+function playRound(humanChoice , computerChoice) {
+    if (humanChoice === computerChoice) {
+        return "Its's a tie!";
+    } else if ()
+    }
+}
