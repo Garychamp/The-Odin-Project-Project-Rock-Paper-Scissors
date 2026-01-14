@@ -1,31 +1,36 @@
-let humanScore = 0;
+//Rock Paper Scissors Game
+
+function getComputerChoice() {
+	let choices = ['rock', 'paper', 'scissors'];
+	let randomIndex = Math.floor(Math.random() * 3);
+	return choices[randomIndex];
+}
+
+function playRound(playerChoice, computerChoice) {
+	if (playerChoice === computerChoice) {
+		return 'Its a tie!';
+	} else if (
+		(playerChoice === 'rock' && computerChoice === 'scissors') ||
+		(playerChoice === 'paper' && computerChoice === 'rock') ||
+		(playerChoice === 'scissors' && computerChoice === 'paper')
+	) {
+		return 'You win! ' + playerChoice + ' beats ' + computerChoice;
+	} else {
+		return 'You lose! ' + computerChoice + ' beats ' + playerChoice;
+	}
+}
+
+let playerScore = 0;
 let computerScore = 0;
 
-function getComputerChoice(num) {
-    if (num ===1) {
-        return "rock";
-    } else if (num ===0) {
-        return "paper";     
-    } else if (num <1) {
-        return "scissors";
-    }
-}
-
-let sign = prompt("Choose rock, paper or scissors:");
-
-function getHumanChoice(input) {
-    if (input === rock) {
-        return "rock";
-    } else if (input === paper) {
-        return "paper";     
-    } else if (input === scissors) {
-        return "scissors";
-    }
-}
-
-function playRound(humanChoice , computerChoice) {
-    if (humanChoice === computerChoice) {
-        return "Its's a tie!";
-    } else if ()
-    }
+while (playerScore < 5 && computerScore < 5) {
+	let computerChoice = getComputerChoice();
+	let playerChoice = 'rock';
+	let result = playRound(playerChoice, computerChoice);
+	console.log(result);
+	if (result.startsWith('You win')) {
+		playerScore +=1;
+	} else if (result.startsWith('You lose')) {
+		computerScore +=1;
+	}
 }
