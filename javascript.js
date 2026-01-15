@@ -25,7 +25,7 @@ let computerScore = 0;
 
 while (playerScore < 5 && computerScore < 5) {
 	let computerChoice = getComputerChoice();
-	let playerChoice = 'rock';
+	let playerChoice = prompt ('rock, paper or scissors').trim().toLowerCase();
 	let result = playRound(playerChoice, computerChoice);
 	console.log(result);
 	if (result.startsWith('You win')) {
@@ -33,4 +33,10 @@ while (playerScore < 5 && computerScore < 5) {
 	} else if (result.startsWith('You lose')) {
 		computerScore +=1;
 	}
+}
+
+if (playerScore ===5) {
+	console.log('You won the game!');
+} else {
+	console.log('Computer won the game!');
 }
